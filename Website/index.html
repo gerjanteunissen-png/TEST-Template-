@@ -1,0 +1,102 @@
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cloudy Pancake House – Soufflé Pancakes</title>
+  <meta name="description" content="Cloudy Pancake House serves light, fluffy Japanese-style soufflé pancakes.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#fff9f4; color:#333; }
+    header { background:#ffd6d6; padding:60px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.6em; }
+    header p { font-size:1.2em; margin-top:10px; }
+    section { max-width:900px; margin:auto; padding:40px 20px; }
+    h2 { color:#e76f51; }
+    ul { list-style:none; padding:0; }
+    li { background:#fff; margin-bottom:12px; padding:16px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+    footer { background:#333; color:#fff; text-align:center; padding:30px; }
+    .review { background:#fff; border-left:4px solid #ffd6d6; padding:15px; margin-bottom:15px; border-radius:6px; }
+    a { color:#e76f51; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Cloudy Pancake House</h1>
+  <p>Fake Demo – Japanese Soufflé Pancakes</p>
+</header>
+
+<section>
+  <h2>Menu</h2>
+  <ul id="menu"></ul>
+</section>
+
+<section>
+  <h2>About Us</h2>
+  <p>
+    Cloudy Pancake House is a fictional café created for demo purposes.
+    Inspired by Japanese dessert culture, we focus on fluffy textures,
+    pastel vibes and slow-made pancakes that melt in your mouth.
+  </p>
+</section>
+
+<section>
+  <h2>Reviews</h2>
+  <div class="review">⭐⭐⭐⭐⭐ “Absolutely unreal pancakes. Soft like clouds.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Best brunch spot we *wish* existed.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Cute interior, friendly staff, amazing taste.”</div>
+</section>
+
+<section>
+  <h2>Visit Us</h2>
+  <p>📍 123 Dream Street, Sweet City</p>
+  <p>🕒 Daily: 09:00 – 18:00</p>
+  <p>📸 Instagram: <a href="#">@cloudypancakehouse</a></p>
+</section>
+
+<footer>
+  <p>© 2026 Cloudy Pancake House – Demo Website</p>
+</footer>
+
+<script>
+  fetch('menu.json')
+    .then(res => res.json())
+    .then(items => {
+      const list = document.getElementById('menu');
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${item.name}</strong><br>${item.description}`;
+        list.appendChild(li);
+      });
+    });
+</script>
+
+</body>
+</html>
+```
+
+---
+
+## menu.json
+
+```json
+[
+  {"name": "Vanilla Cloud Pancakes", "description": "Classic soufflé pancakes with vanilla cream"},
+  {"name": "Berry Dream Stack", "description": "Fluffy pancakes topped with mixed berries"},
+  {"name": "Chocolate Sky Pancakes", "description": "Rich cocoa batter with chocolate sauce"},
+  {"name": "Monthly Fantasy Special", "description": "Rotating seasonal flavor (demo item)"}
+]
+```
+
+---
+
+### Gebruik
+
+* Sla beide bestanden op als **index.html** en **menu.json**
+* Upload ze naar een **public GitHub repository**
+* Activeer **GitHub Pages (main / root)**
+* Klaar: perfecte fake demo voor klanten 🚀
